@@ -1,0 +1,83 @@
+/* Gaya dasar */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+/* Container untuk tumpukan card */
+.card-stack {
+    position: relative;
+    width: 300px;
+    height: 400px;
+}
+
+/* Gaya card */
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.5s ease, opacity 0.5s ease, z-index 0.5s ease;
+}
+
+/* Card yang aktif (terlihat penuh) */
+.card.active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    z-index: 10; /* Z-index tinggi untuk card aktif */
+}
+
+/* Card yang tidak aktif (terlihat sebagian) */
+.card:not(.active) {
+    transform: translateY(50px) translateX(-100px) scale(0.9);
+    /* opacity: 0.7; */
+    z-index: 1; /* Z-index rendah untuk card tidak aktif */
+}
+
+/* Atur z-index untuk card yang tidak aktif berdasarkan urutan */
+/* .card:nth-child(1):not(.active) {
+    z-index: 5;
+}
+.card:nth-child(2):not(.active) {
+    z-index: 4;
+}
+.card:nth-child(3):not(.active) {
+    z-index: 3;
+}
+.card:nth-child(4):not(.active) {
+    z-index: 2;
+}
+.card:nth-child(5):not(.active) {
+    z-index: 1;
+} */
+
+/* Tombol navigasi */
+.navigation {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.navigation button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navigation button:hover {
+    background-color: #0056b3;
+}
